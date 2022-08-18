@@ -18,18 +18,12 @@ object_resources = data.object.resources {
 #############################################################################
 # METADATA: library-snippet/entitlements
 # version: v1
-# title: "ADAM: Adam's first custom snippet"
+# title: "ADAM: Adam's entitlements list"
 # description: >-
 #   This custom snippet asks the user to enter one parameter, the subjects (aka users).
 #   It does not provide any guidance for those values.
 # schema:
 #   type: object
-#   properties:
-#     subjects:
-#       type: array
-#       items:
-#         type: string
-#       uniqueItems: true
 #   decision:
 #     oneOf:
 #       - required:
@@ -62,7 +56,7 @@ object_resources = data.object.resources {
 # policy:
 #   rule:
 #     type: rego
-#     value: "{{library-snippet}}[obj]"
+#     value: "obj := {{library-snippet}}"
 #   schema:
 #     decision:
 #       type: object
@@ -70,11 +64,19 @@ object_resources = data.object.resources {
 #         message:
 #           type: rego
 #           value: "obj.message"
+#         entz:
+#            type: rego
+#            value: "obj.entz"
 #       required:
 #         - message
+#         - entz
 #############################################################################
-custom_snippet_params[obj] {
-	obj := {"message": sprintf("CUSTOM: Hello from Adam (%s)", [data.library.parameters.subjects])}
+adam_entitlements_list = obj {
+	obj := {
+	    "allowed": count(entitlements) > 0,
+	    "message": "List of entitlements the user has based on attributes",
+	    "entz": entitlements
+	}
 }
 
 entitlements[resource] {
