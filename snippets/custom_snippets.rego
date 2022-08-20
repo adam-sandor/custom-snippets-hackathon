@@ -16,6 +16,7 @@ package global.adam_custom_snippets
 #       type: string
 #     operation:
 #       type: string
+#       enum: [">=", ">", "=", "<", "<="]
 #   decision:
 #     oneOf:
 #       - required:
