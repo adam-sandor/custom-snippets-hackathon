@@ -16,7 +16,7 @@ package global.adam_custom_snippets
 #       type: string
 #       "hint:items":
 #         library: "global/adam_custom_snippets"
-#         query: "data.global.adam_custom_snippets.resource_attributes_array"
+#         query: "resource_attributes_array"
 #     operation:
 #       type: string
 #       enum: [">=", ">", "=", "<", "<="]
