@@ -1,9 +1,7 @@
-package global.adam_custom_snippets.test
-
-import data.global.adam_custom_snippets as snippets
+package global.adam_custom_snippets
 
 test_list_entitlements {
-    result := snippets.adam_entitlements_list with input as {
+    result := adam_entitlements_list with input as {
         "subject": "adam"
     }
     with data.object as {
