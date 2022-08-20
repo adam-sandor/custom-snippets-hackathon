@@ -3,17 +3,23 @@ package global.adam_custom_snippets
 #############################################################################
 # METADATA: library-snippet/entitlements
 # version: v1
-# title: "ADAM: Adam's entitlements list"
+# title: "ADAM: User resource access by attribute"
 # description: >-
-#   This custom snippet asks the user to enter one parameter, the subjects (aka users).
-#   It does not provide any guidance for those values.
+#   List all resources a subject has access to based on a match in attributes. Both the attribute of the user and
+#   the attribute of the resource needs to be configured as well as the relationship between them in the form of
+#   a math operation. For any operation other than '=' both attributes have to be numbers.
+#
+#   Example: List all resources where the resource's security_level attribute is lower then or equal 
+#   to the subject's access_level attribute.
 # schema:
 #   type: object
 #   properties:
-#     user_attribute:
+#     subject_attribute:
 #       type: string
+#       title: "Subject attribute"
 #     resource_attribute:
 #       type: string
+#       title: "Resource attribute"
 #     operation:
 #       type: string
 #       enum: [">=", ">", "=", "<", "<="]

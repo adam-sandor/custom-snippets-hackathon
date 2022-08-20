@@ -7,26 +7,25 @@ test_list_entitlements {
     with data.object as {
         "resources": {
             "resource1": {
-                "level": 1
+                "security_level": 1
             },
             "resource2": {
-                "level": 2
+                "security_level": 2
             },
             "resource3": {
-                "level": 3
+                "security_level": 3
             }
         },
         "users": {
             "adam": {
-                "role": "customer_support",
-                "role_level": 2
+                "access_level": 2
             }
         }
     }
     with data.library.parameters as {
-        "user_attribute": "role_level",
-        "resource_attribute": "level",
-        "operation": ">="
+        "user_attribute": "access_level",
+        "operation": ">=",
+        "resource_attribute": "security_level"
     }
 
     print(result)
