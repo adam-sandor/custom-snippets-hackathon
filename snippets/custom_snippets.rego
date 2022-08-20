@@ -67,7 +67,10 @@ adam_entitlements_list = obj {
 	obj := {
 	    "allowed": count(entitlements) > 0,
 	    "message": "List of entitlements the user has based on attributes",
-	    "entz": entitlements
+	    "entz": {
+	        "resources": entitlements,
+	        "snippet": "custom_snippets/adam_entitlements_list"
+	    }
 	}
 }
 

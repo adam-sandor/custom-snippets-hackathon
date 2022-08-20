@@ -30,6 +30,9 @@ test_list_entitlements {
     }
 
     print(result)
-    result.entz == {"resource1", "resource2"}
+    result.entz == {
+        "snippet": "custom_snippets/adam_entitlements_list",
+        "resources": {"resource1", "resource2"}
+    }
     result.allowed == true
 }
