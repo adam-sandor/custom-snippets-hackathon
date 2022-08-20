@@ -36,3 +36,20 @@ test_list_entitlements {
     }
     result.allowed == true
 }
+
+test_list_resource_attributes {
+    result := resource_attributes_array with data.object.resources as {
+        "resource1": {
+            "level": 1
+        },
+        "resource2": {
+            "level": 2
+        },
+        "resource3": {
+            "level": 3
+        }
+    }
+
+    print(result)
+    result == ["level"]
+}

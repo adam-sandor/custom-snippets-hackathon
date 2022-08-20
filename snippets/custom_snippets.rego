@@ -14,6 +14,9 @@ package global.adam_custom_snippets
 #       type: string
 #     resource_attribute:
 #       type: string
+#       "hint:items":
+#         package: "global.adam_custom_snippets"
+#         query: "resource_attributes_array"
 #     operation:
 #       type: string
 #       enum: [">=", ">", "=", "<", "<="]
@@ -103,4 +106,12 @@ entitlements[resource] {
   data.library.parameters.operation == "<="
   data.object.users[input.subject][data.library.parameters.user_attribute] <=
     data.object.resources[resource][data.library.parameters.resource_attribute]
+}
+
+resource_attributes[a] {
+    data.object.resources[_][a]
+}
+
+resource_attributes_array = a {
+    a := [ a | a := resource_attributes[_] ]
 }
