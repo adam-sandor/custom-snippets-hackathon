@@ -9,6 +9,13 @@ package global.adam_custom_snippets
 #   It does not provide any guidance for those values.
 # schema:
 #   type: object
+#   properties:
+#     user_attribute:
+#       type: string
+#     resource_attribute:
+#       type: string
+#     operation:
+#       type: string
 #   decision:
 #     oneOf:
 #       - required:
@@ -65,6 +72,31 @@ adam_entitlements_list = obj {
 }
 
 entitlements[resource] {
-  data.object.users[input.subject].role == "customer_support"
-  data.object.users[input.subject].role_level >= data.object.resources[resource].role_level
+  data.library.parameters.operation == ">="
+  data.object.users[input.subject][data.library.parameters.user_attribute] >=
+    data.object.resources[resource][data.library.parameters.resource_attribute]
+}
+
+entitlements[resource] {
+  data.library.parameters.operation == ">"
+  data.object.users[input.subject][data.library.parameters.user_attribute] >
+    data.object.resources[resource][data.library.parameters.resource_attribute]
+}
+
+entitlements[resource] {
+  data.library.parameters.operation == "="
+  data.object.users[input.subject][data.library.parameters.user_attribute] ==
+    data.object.resources[resource][data.library.parameters.resource_attribute]
+}
+
+entitlements[resource] {
+  data.library.parameters.operation == "<"
+  data.object.users[input.subject][data.library.parameters.user_attribute] <
+    data.object.resources[resource][data.library.parameters.resource_attribute]
+}
+
+entitlements[resource] {
+  data.library.parameters.operation == "<="
+  data.object.users[input.subject][data.library.parameters.user_attribute] <=
+    data.object.resources[resource][data.library.parameters.resource_attribute]
 }

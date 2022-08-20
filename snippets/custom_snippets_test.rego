@@ -7,13 +7,13 @@ test_list_entitlements {
     with data.object as {
         "resources": {
             "resource1": {
-                "role_level": 1
+                "level": 1
             },
             "resource2": {
-                "role_level": 2
+                "level": 2
             },
             "resource3": {
-                "role_level": 3
+                "level": 3
             }
         },
         "users": {
@@ -22,6 +22,11 @@ test_list_entitlements {
                 "role_level": 2
             }
         }
+    }
+    with data.library.parameters as {
+        "user_attribute": "role_level",
+        "resource_attribute": "level",
+        "operation": ">="
     }
 
     print(result)
