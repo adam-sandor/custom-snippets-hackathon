@@ -1,20 +1,5 @@
 package global.adam_custom_snippets
 
-# object_users and object_resources are defined in this way to guarantee they
-# will never be undefined, even if data.object.{users,resources} is not
-# defined.
-object_users = data.object.users {
-	true
-} else = {} {
-	true
-}
-
-object_resources = data.object.resources {
-	true
-} else = {} {
-	true
-}
-
 #############################################################################
 # METADATA: library-snippet/entitlements
 # version: v1
