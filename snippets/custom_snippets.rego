@@ -14,9 +14,9 @@ package global.adam_custom_snippets
 # schema:
 #   type: object
 #   properties:
-#     subject_attribute:
+#     user_attribute:
 #       type: string
-#       title: "Subject attribute"
+#       title: "User attribute"
 #     resource_attribute:
 #       type: string
 #       title: "Resource attribute"
