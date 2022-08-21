@@ -16,13 +16,15 @@ package global.adam_custom_snippets
 #   properties:
 #     user_attribute:
 #       type: string
-#       title: "User attribute"
+#       name: "User attribute"
+#       description: The attribute of users used for comparison
 #     resource_attribute:
 #       type: string
-#       title: "Resource attribute"
+#       name: "Resource attribute"
+#       description: The attribute of resources used for comparison
 #     operation:
 #       type: string
-#       title: Operation
+#       name: Operation
 #       description: How to compare the user attribute on the left side to the resource attribute to the right side
 #       enum: [">=", ">", "=", "<", "<="]
 #   decision:
