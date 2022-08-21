@@ -22,6 +22,8 @@ package global.adam_custom_snippets
 #       title: "Resource attribute"
 #     operation:
 #       type: string
+#       title: Operation
+#       description: How to compare the user attribute on the left side to the resource attribute to the right side
 #       enum: [">=", ">", "=", "<", "<="]
 #   decision:
 #     oneOf:
