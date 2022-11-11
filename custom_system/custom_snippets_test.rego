@@ -1,4 +1,4 @@
-package global.custom_snippets.custom_system
+package global.custom_snippets
 
 test_allow {
     result := allow with input as {

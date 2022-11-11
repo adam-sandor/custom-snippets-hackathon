@@ -1,4 +1,4 @@
-package global.custom_snippets.custom_system
+package global.custom_snippets
 
 import future.keywords.in
 
