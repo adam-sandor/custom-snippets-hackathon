@@ -31,19 +31,6 @@ import future.keywords.in
 #   rule:
 #     type: rego
 #     value: "{{this}}[msg]"
-#   schema:
-#     decision:
-#       type: object
-#       properties:
-#         message:
-#           type: rego
-#           value: "obj.message"
-#         entz:
-#            type: rego
-#            value: "obj.entz"
-#       required:
-#         - message
-#         - entz
 #############################################################################
 allow[msg] {
 	user_in_group(input.user, data.library.parameters.group)
