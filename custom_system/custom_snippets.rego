@@ -25,9 +25,6 @@ import future.keywords.in
 #       title: "Path"
 #   decision:
 #     - type: rego
-#       key: allowed
-#       value: "true"
-#     - type: rego
 #       key: message
 #       value: "msg"
 # policy:
